@@ -10,6 +10,9 @@ class App {
         this.viewer = document.querySelector("#viewer");
         this.pagination = document.querySelector(".pagination");
         this.viewModal = document.querySelector("#view-modal");
+        this.viewModal.slideArea = this.viewModal.querySelector(".slide__area");
+        this.viewModal.slideImage = this.viewModal.querySelector(".slide__image");
+        this.viewModal.slideControl = this.viewModal.querySelector(".slide__control");
         
         this.getFestivals().then(() => {
             this.update();
@@ -49,26 +52,52 @@ class App {
             this.viewModal.querySelector(".dt").innerHTML = festival.dt;
 
             // 슬라이드 초기화
-            this.viewModal.querySelector(".slide__area").dataset.sno = 1;
-            this.viewModal.querySelector(".slide__image").innerHTML = "";
-            this.viewModal.querySelector(".slide__control").innerHTML = `<button class="slide__arrow"><i class="fa fa-angle-left"></i></button>`;
+            this.viewModal.slideArea.dataset.cno = 0;
+            this.viewModal.slideImage.innerHTML = "";
+            this.viewModal.slideControl.innerHTML = `<button class="slide__arrow" data-no="-1"><i class="fa fa-angle-left"></i></button>`;
             if(festival.images.length > 0){
                 festival.images.forEach((filename, i) => {
-                    this.viewModal.querySelector(".slide__control").innerHTML += `<button class="slide__no" data-no="${i}"><i class="fa fa-circle"></i></button>`;
-                    this.viewModal.querySelector(".slide__image").innerHTML += `<img src="/xml/festivalImages/${this.getFestivalId(festival)}/${filename}" title="축제 정보 이미지" alt="축제 정보 이미지">`;
+                    this.viewModal.slideControl.innerHTML += `<button class="slide__no" data-no="${i}"><i class="fa fa-circle"></i></button>`;
+                    this.viewModal.slideImage.innerHTML += `<img src="/xml/festivalImages/${this.getFestivalId(festival)}/${filename}" title="축제 정보 이미지" alt="축제 정보 이미지">`;
                 });
             }
             else {
-                this.viewModal.querySelector(".slide__image").innerHTML += `<img src="/images/no-image.png" title="축제 정보 이미지" alt="축제 정보 이미지">`;
-                this.viewModal.querySelector(".slide__control").innerHTML += `<button class="slide__no" data-no="0"><i class="fa fa-circle"></i></button>`;
+                this.viewModal.slideImage.innerHTML += `<img src="/images/no-image.png" title="축제 정보 이미지" alt="축제 정보 이미지">`;
+                this.viewModal.slideControl.innerHTML += `<button class="slide__no" data-no="0"><i class="fa fa-circle"></i></button>`;
             }
-            this.viewModal.querySelector(".slide__control").innerHTML += `<button class="slide__arrow"><i class="fa fa-angle-right"></i></button>`;
+            this.viewModal.slideControl.innerHTML += `<button class="slide__arrow" data-no="1"><i class="fa fa-angle-right"></i></button>`;
 
             // 이미지 설정
-            $(".slide__image > img:not(:first-child)").addClass("hidden__right");
+            $(".slide__image > img").eq(0).addClass("active");
 
             // 버튼 설정
             $(".slide__control > .slide__no").eq(0).addClass("active");
+        });
+
+        $(this.viewModal).on("click", ".slide__no", e => {
+            let images = this.viewModal.querySelectorAll(".slide__image > img");
+            let btns = this.viewModal.querySelectorAll(".slide__no");
+            let no = e.currentTarget.dataset.no;
+
+            $(images).removeClass("active");
+            $(btns).removeClass("active");
+            btns[no].classList.add("active");
+            images[no].classList.add("active");
+        });
+
+        $(this.viewModal).on("click", ".slide__arrow", e => {
+            let images = this.viewModal.querySelectorAll(".slide__image > img");
+            let btns = this.viewModal.querySelectorAll(".slide__no");
+            let dir = parseInt(e.currentTarget.dataset.no);
+            let cno = parseInt(this.viewModal.slideArea.dataset.cno);
+            let nno = cno + dir;
+            if(nno >= images.length || nno < 0) nno = cno;
+
+            this.viewModal.slideArea.dataset.cno = nno;
+            $(images).removeClass("active");
+            $(btns).removeClass("active");
+            images[nno].classList.add("active");
+            btns[nno].classList.add("active");
         });
     }
 

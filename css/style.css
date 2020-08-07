@@ -1033,17 +1033,12 @@ button, [class*="btn"] {
 }
 .slide__image > img {
     position: absolute;
-    left: 50%; top: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100%; max-height: 100%;
-    object-fit: cover;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    object-fit: contain;
     transition: 0.35s;
 }
-
-.slide__image > img.hidden__left, 
-.slide__image > img.hidden__right { opacity: 0; pointer-events: none; }
-.slide__image > img.hidden__left { margin-left: -200px; }
-.slide__image > img.hidden__right { margin-left: 200px; }
+.slide__image > img:not(.active) { opacity: 0; }
 
 .slide__control {
     display: flex;
