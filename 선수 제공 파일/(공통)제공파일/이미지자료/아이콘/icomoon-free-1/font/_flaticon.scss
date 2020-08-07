@@ -1,0 +1,487 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 22/06/2016 15:02
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-abecedary:before { content: "\f100"; }
+.flaticon-address-book:before { content: "\f101"; }
+.flaticon-android:before { content: "\f102"; }
+.flaticon-angry:before { content: "\f103"; }
+.flaticon-apple:before { content: "\f104"; }
+.flaticon-arrow:before { content: "\f105"; }
+.flaticon-arrow-1:before { content: "\f106"; }
+.flaticon-arrow-2:before { content: "\f107"; }
+.flaticon-arrow-3:before { content: "\f108"; }
+.flaticon-arrow-4:before { content: "\f109"; }
+.flaticon-arrow-5:before { content: "\f10a"; }
+.flaticon-basketball:before { content: "\f10b"; }
+.flaticon-binoculars:before { content: "\f10c"; }
+.flaticon-blocking:before { content: "\f10d"; }
+.flaticon-bold-text:before { content: "\f10e"; }
+.flaticon-bookmarks:before { content: "\f10f"; }
+.flaticon-books:before { content: "\f110"; }
+.flaticon-building:before { content: "\f111"; }
+.flaticon-calendar:before { content: "\f112"; }
+.flaticon-calendar-1:before { content: "\f113"; }
+.flaticon-center-paragraph:before { content: "\f114"; }
+.flaticon-chain:before { content: "\f115"; }
+.flaticon-check:before { content: "\f116"; }
+.flaticon-checking:before { content: "\f117"; }
+.flaticon-chrome:before { content: "\f118"; }
+.flaticon-circle:before { content: "\f119"; }
+.flaticon-clipboard:before { content: "\f11a"; }
+.flaticon-clipboard-1:before { content: "\f11b"; }
+.flaticon-clipboard-2:before { content: "\f11c"; }
+.flaticon-clipboard-3:before { content: "\f11d"; }
+.flaticon-cloud:before { content: "\f11e"; }
+.flaticon-clover:before { content: "\f11f"; }
+.flaticon-coding-program:before { content: "\f120"; }
+.flaticon-cogwheel:before { content: "\f121"; }
+.flaticon-confused:before { content: "\f122"; }
+.flaticon-confused-face:before { content: "\f123"; }
+.flaticon-connection:before { content: "\f124"; }
+.flaticon-cool:before { content: "\f125"; }
+.flaticon-copy:before { content: "\f126"; }
+.flaticon-copy-1:before { content: "\f127"; }
+.flaticon-credit-card:before { content: "\f128"; }
+.flaticon-css-3:before { content: "\f129"; }
+.flaticon-curve-arrow:before { content: "\f12a"; }
+.flaticon-cutlery:before { content: "\f12b"; }
+.flaticon-deviantart:before { content: "\f12c"; }
+.flaticon-deviantart-1:before { content: "\f12d"; }
+.flaticon-devil:before { content: "\f12e"; }
+.flaticon-document:before { content: "\f12f"; }
+.flaticon-down-arrow:before { content: "\f130"; }
+.flaticon-down-arrow-1:before { content: "\f131"; }
+.flaticon-download:before { content: "\f132"; }
+.flaticon-download-1:before { content: "\f133"; }
+.flaticon-download-box:before { content: "\f134"; }
+.flaticon-drawer:before { content: "\f135"; }
+.flaticon-droplet:before { content: "\f136"; }
+.flaticon-emergency-kit:before { content: "\f137"; }
+.flaticon-enter:before { content: "\f138"; }
+.flaticon-envelope:before { content: "\f139"; }
+.flaticon-evil:before { content: "\f13a"; }
+.flaticon-eye:before { content: "\f13b"; }
+.flaticon-facebok:before { content: "\f13c"; }
+.flaticon-facebook:before { content: "\f13d"; }
+.flaticon-facebook-1:before { content: "\f13e"; }
+.flaticon-fast-forward:before { content: "\f13f"; }
+.flaticon-feed-symbol:before { content: "\f140"; }
+.flaticon-file:before { content: "\f141"; }
+.flaticon-file-1:before { content: "\f142"; }
+.flaticon-file-2:before { content: "\f143"; }
+.flaticon-film-play-button:before { content: "\f144"; }
+.flaticon-finger:before { content: "\f145"; }
+.flaticon-flag:before { content: "\f146"; }
+.flaticon-flickr:before { content: "\f147"; }
+.flaticon-flickr-1:before { content: "\f148"; }
+.flaticon-forrst:before { content: "\f149"; }
+.flaticon-funnel:before { content: "\f14a"; }
+.flaticon-giftbox:before { content: "\f14b"; }
+.flaticon-github:before { content: "\f14c"; }
+.flaticon-github-1:before { content: "\f14d"; }
+.flaticon-github-2:before { content: "\f14e"; }
+.flaticon-globe-grid:before { content: "\f14f"; }
+.flaticon-google-g:before { content: "\f150"; }
+.flaticon-grinning-face:before { content: "\f151"; }
+.flaticon-half-moon:before { content: "\f152"; }
+.flaticon-hammer:before { content: "\f153"; }
+.flaticon-hand:before { content: "\f154"; }
+.flaticon-happy:before { content: "\f155"; }
+.flaticon-headphones:before { content: "\f156"; }
+.flaticon-heart:before { content: "\f157"; }
+.flaticon-hierarchical-network:before { content: "\f158"; }
+.flaticon-home:before { content: "\f159"; }
+.flaticon-home-1:before { content: "\f15a"; }
+.flaticon-home-2:before { content: "\f15b"; }
+.flaticon-hourglass:before { content: "\f15c"; }
+.flaticon-html-5:before { content: "\f15d"; }
+.flaticon-icomoon:before { content: "\f15e"; }
+.flaticon-indent:before { content: "\f15f"; }
+.flaticon-info:before { content: "\f160"; }
+.flaticon-instagram:before { content: "\f161"; }
+.flaticon-internet-explorer:before { content: "\f162"; }
+.flaticon-justify-paragraph:before { content: "\f163"; }
+.flaticon-key:before { content: "\f164"; }
+.flaticon-keyboard:before { content: "\f165"; }
+.flaticon-last-fm:before { content: "\f166"; }
+.flaticon-layer:before { content: "\f167"; }
+.flaticon-leaf:before { content: "\f168"; }
+.flaticon-left-align:before { content: "\f169"; }
+.flaticon-left-alignment:before { content: "\f16a"; }
+.flaticon-left-arrow:before { content: "\f16b"; }
+.flaticon-left-arrow-1:before { content: "\f16c"; }
+.flaticon-left-to-right-text:before { content: "\f16d"; }
+.flaticon-library:before { content: "\f16e"; }
+.flaticon-libreoffice:before { content: "\f16f"; }
+.flaticon-lifesaver:before { content: "\f170"; }
+.flaticon-linkedin:before { content: "\f171"; }
+.flaticon-looping-arrows:before { content: "\f172"; }
+.flaticon-magnifier-glass:before { content: "\f173"; }
+.flaticon-mail:before { content: "\f174"; }
+.flaticon-male:before { content: "\f175"; }
+.flaticon-man:before { content: "\f176"; }
+.flaticon-map:before { content: "\f177"; }
+.flaticon-map-1:before { content: "\f178"; }
+.flaticon-menu:before { content: "\f179"; }
+.flaticon-mobile-phone:before { content: "\f17a"; }
+.flaticon-musical-note:before { content: "\f17b"; }
+.flaticon-mute:before { content: "\f17c"; }
+.flaticon-neutral:before { content: "\f17d"; }
+.flaticon-newspaper:before { content: "\f17e"; }
+.flaticon-next:before { content: "\f17f"; }
+.flaticon-omega:before { content: "\f180"; }
+.flaticon-outbox:before { content: "\f181"; }
+.flaticon-page:before { content: "\f182"; }
+.flaticon-paper:before { content: "\f183"; }
+.flaticon-paragraph:before { content: "\f184"; }
+.flaticon-pawn:before { content: "\f185"; }
+.flaticon-paypal:before { content: "\f186"; }
+.flaticon-pen-point:before { content: "\f187"; }
+.flaticon-picasa:before { content: "\f188"; }
+.flaticon-picture:before { content: "\f189"; }
+.flaticon-pinterest:before { content: "\f18a"; }
+.flaticon-placeholder:before { content: "\f18b"; }
+.flaticon-play:before { content: "\f18c"; }
+.flaticon-play-video:before { content: "\f18d"; }
+.flaticon-plug:before { content: "\f18e"; }
+.flaticon-podcast:before { content: "\f18f"; }
+.flaticon-pointing-down:before { content: "\f190"; }
+.flaticon-power:before { content: "\f191"; }
+.flaticon-powerpoint:before { content: "\f192"; }
+.flaticon-previous:before { content: "\f193"; }
+.flaticon-print:before { content: "\f194"; }
+.flaticon-profile:before { content: "\f195"; }
+.flaticon-pushpin:before { content: "\f196"; }
+.flaticon-question:before { content: "\f197"; }
+.flaticon-quotes:before { content: "\f198"; }
+.flaticon-redo-arrow:before { content: "\f199"; }
+.flaticon-reduce-indentation:before { content: "\f19a"; }
+.flaticon-rewind:before { content: "\f19b"; }
+.flaticon-right-to-left-text-arrangement:before { content: "\f19c"; }
+.flaticon-rocket:before { content: "\f19d"; }
+.flaticon-rotating:before { content: "\f19e"; }
+.flaticon-rss:before { content: "\f19f"; }
+.flaticon-rss-1:before { content: "\f1a0"; }
+.flaticon-sad:before { content: "\f1a1"; }
+.flaticon-sad-1:before { content: "\f1a2"; }
+.flaticon-safari:before { content: "\f1a3"; }
+.flaticon-scissors:before { content: "\f1a4"; }
+.flaticon-share:before { content: "\f1a5"; }
+.flaticon-shopping-cart:before { content: "\f1a6"; }
+.flaticon-shopping-cart-1:before { content: "\f1a7"; }
+.flaticon-skip:before { content: "\f1a8"; }
+.flaticon-skype:before { content: "\f1a9"; }
+.flaticon-smartphone:before { content: "\f1aa"; }
+.flaticon-smiley:before { content: "\f1ab"; }
+.flaticon-smiley-1:before { content: "\f1ac"; }
+.flaticon-soundcloud:before { content: "\f1ad"; }
+.flaticon-soundcloud-1:before { content: "\f1ae"; }
+.flaticon-speaker:before { content: "\f1af"; }
+.flaticon-speech-balloons:before { content: "\f1b0"; }
+.flaticon-speech-bubble:before { content: "\f1b1"; }
+.flaticon-speech-bubbles:before { content: "\f1b2"; }
+.flaticon-speedometer:before { content: "\f1b3"; }
+.flaticon-speedometer-1:before { content: "\f1b4"; }
+.flaticon-spinner:before { content: "\f1b5"; }
+.flaticon-square:before { content: "\f1b6"; }
+.flaticon-square-1:before { content: "\f1b7"; }
+.flaticon-star:before { content: "\f1b8"; }
+.flaticon-star-1:before { content: "\f1b9"; }
+.flaticon-steam:before { content: "\f1ba"; }
+.flaticon-steam-1:before { content: "\f1bb"; }
+.flaticon-stop:before { content: "\f1bc"; }
+.flaticon-striped-shield:before { content: "\f1bd"; }
+.flaticon-stumbleupon:before { content: "\f1be"; }
+.flaticon-text-height:before { content: "\f1bf"; }
+.flaticon-three-drawers-cabinet:before { content: "\f1c0"; }
+.flaticon-three-horizontal-bars:before { content: "\f1c1"; }
+.flaticon-tongue-out:before { content: "\f1c2"; }
+.flaticon-trash:before { content: "\f1c3"; }
+.flaticon-triangles:before { content: "\f1c4"; }
+.flaticon-triangular:before { content: "\f1c5"; }
+.flaticon-truck:before { content: "\f1c6"; }
+.flaticon-tux:before { content: "\f1c7"; }
+.flaticon-tv:before { content: "\f1c8"; }
+.flaticon-twitter:before { content: "\f1c9"; }
+.flaticon-twitter-1:before { content: "\f1ca"; }
+.flaticon-up-arrow:before { content: "\f1cb"; }
+.flaticon-upload:before { content: "\f1cc"; }
+.flaticon-upload-1:before { content: "\f1cd"; }
+.flaticon-video-camera:before { content: "\f1ce"; }
+.flaticon-vimeo:before { content: "\f1cf"; }
+.flaticon-volume:before { content: "\f1d0"; }
+.flaticon-volume-high:before { content: "\f1d1"; }
+.flaticon-warning:before { content: "\f1d2"; }
+.flaticon-windows:before { content: "\f1d3"; }
+.flaticon-windows-8:before { content: "\f1d4"; }
+.flaticon-wine-glass:before { content: "\f1d5"; }
+.flaticon-wink:before { content: "\f1d6"; }
+.flaticon-wondering:before { content: "\f1d7"; }
+.flaticon-word:before { content: "\f1d8"; }
+.flaticon-wordpress:before { content: "\f1d9"; }
+.flaticon-wrench:before { content: "\f1da"; }
+.flaticon-writing:before { content: "\f1db"; }
+.flaticon-xing-icomoon:before { content: "\f1dc"; }
+.flaticon-xml-file:before { content: "\f1dd"; }
+.flaticon-youtube:before { content: "\f1de"; }
+.flaticon-zoom:before { content: "\f1df"; }
+    
+    $font-Flaticon-abecedary: "\f100";
+    $font-Flaticon-address-book: "\f101";
+    $font-Flaticon-android: "\f102";
+    $font-Flaticon-angry: "\f103";
+    $font-Flaticon-apple: "\f104";
+    $font-Flaticon-arrow: "\f105";
+    $font-Flaticon-arrow-1: "\f106";
+    $font-Flaticon-arrow-2: "\f107";
+    $font-Flaticon-arrow-3: "\f108";
+    $font-Flaticon-arrow-4: "\f109";
+    $font-Flaticon-arrow-5: "\f10a";
+    $font-Flaticon-basketball: "\f10b";
+    $font-Flaticon-binoculars: "\f10c";
+    $font-Flaticon-blocking: "\f10d";
+    $font-Flaticon-bold-text: "\f10e";
+    $font-Flaticon-bookmarks: "\f10f";
+    $font-Flaticon-books: "\f110";
+    $font-Flaticon-building: "\f111";
+    $font-Flaticon-calendar: "\f112";
+    $font-Flaticon-calendar-1: "\f113";
+    $font-Flaticon-center-paragraph: "\f114";
+    $font-Flaticon-chain: "\f115";
+    $font-Flaticon-check: "\f116";
+    $font-Flaticon-checking: "\f117";
+    $font-Flaticon-chrome: "\f118";
+    $font-Flaticon-circle: "\f119";
+    $font-Flaticon-clipboard: "\f11a";
+    $font-Flaticon-clipboard-1: "\f11b";
+    $font-Flaticon-clipboard-2: "\f11c";
+    $font-Flaticon-clipboard-3: "\f11d";
+    $font-Flaticon-cloud: "\f11e";
+    $font-Flaticon-clover: "\f11f";
+    $font-Flaticon-coding-program: "\f120";
+    $font-Flaticon-cogwheel: "\f121";
+    $font-Flaticon-confused: "\f122";
+    $font-Flaticon-confused-face: "\f123";
+    $font-Flaticon-connection: "\f124";
+    $font-Flaticon-cool: "\f125";
+    $font-Flaticon-copy: "\f126";
+    $font-Flaticon-copy-1: "\f127";
+    $font-Flaticon-credit-card: "\f128";
+    $font-Flaticon-css-3: "\f129";
+    $font-Flaticon-curve-arrow: "\f12a";
+    $font-Flaticon-cutlery: "\f12b";
+    $font-Flaticon-deviantart: "\f12c";
+    $font-Flaticon-deviantart-1: "\f12d";
+    $font-Flaticon-devil: "\f12e";
+    $font-Flaticon-document: "\f12f";
+    $font-Flaticon-down-arrow: "\f130";
+    $font-Flaticon-down-arrow-1: "\f131";
+    $font-Flaticon-download: "\f132";
+    $font-Flaticon-download-1: "\f133";
+    $font-Flaticon-download-box: "\f134";
+    $font-Flaticon-drawer: "\f135";
+    $font-Flaticon-droplet: "\f136";
+    $font-Flaticon-emergency-kit: "\f137";
+    $font-Flaticon-enter: "\f138";
+    $font-Flaticon-envelope: "\f139";
+    $font-Flaticon-evil: "\f13a";
+    $font-Flaticon-eye: "\f13b";
+    $font-Flaticon-facebok: "\f13c";
+    $font-Flaticon-facebook: "\f13d";
+    $font-Flaticon-facebook-1: "\f13e";
+    $font-Flaticon-fast-forward: "\f13f";
+    $font-Flaticon-feed-symbol: "\f140";
+    $font-Flaticon-file: "\f141";
+    $font-Flaticon-file-1: "\f142";
+    $font-Flaticon-file-2: "\f143";
+    $font-Flaticon-film-play-button: "\f144";
+    $font-Flaticon-finger: "\f145";
+    $font-Flaticon-flag: "\f146";
+    $font-Flaticon-flickr: "\f147";
+    $font-Flaticon-flickr-1: "\f148";
+    $font-Flaticon-forrst: "\f149";
+    $font-Flaticon-funnel: "\f14a";
+    $font-Flaticon-giftbox: "\f14b";
+    $font-Flaticon-github: "\f14c";
+    $font-Flaticon-github-1: "\f14d";
+    $font-Flaticon-github-2: "\f14e";
+    $font-Flaticon-globe-grid: "\f14f";
+    $font-Flaticon-google-g: "\f150";
+    $font-Flaticon-grinning-face: "\f151";
+    $font-Flaticon-half-moon: "\f152";
+    $font-Flaticon-hammer: "\f153";
+    $font-Flaticon-hand: "\f154";
+    $font-Flaticon-happy: "\f155";
+    $font-Flaticon-headphones: "\f156";
+    $font-Flaticon-heart: "\f157";
+    $font-Flaticon-hierarchical-network: "\f158";
+    $font-Flaticon-home: "\f159";
+    $font-Flaticon-home-1: "\f15a";
+    $font-Flaticon-home-2: "\f15b";
+    $font-Flaticon-hourglass: "\f15c";
+    $font-Flaticon-html-5: "\f15d";
+    $font-Flaticon-icomoon: "\f15e";
+    $font-Flaticon-indent: "\f15f";
+    $font-Flaticon-info: "\f160";
+    $font-Flaticon-instagram: "\f161";
+    $font-Flaticon-internet-explorer: "\f162";
+    $font-Flaticon-justify-paragraph: "\f163";
+    $font-Flaticon-key: "\f164";
+    $font-Flaticon-keyboard: "\f165";
+    $font-Flaticon-last-fm: "\f166";
+    $font-Flaticon-layer: "\f167";
+    $font-Flaticon-leaf: "\f168";
+    $font-Flaticon-left-align: "\f169";
+    $font-Flaticon-left-alignment: "\f16a";
+    $font-Flaticon-left-arrow: "\f16b";
+    $font-Flaticon-left-arrow-1: "\f16c";
+    $font-Flaticon-left-to-right-text: "\f16d";
+    $font-Flaticon-library: "\f16e";
+    $font-Flaticon-libreoffice: "\f16f";
+    $font-Flaticon-lifesaver: "\f170";
+    $font-Flaticon-linkedin: "\f171";
+    $font-Flaticon-looping-arrows: "\f172";
+    $font-Flaticon-magnifier-glass: "\f173";
+    $font-Flaticon-mail: "\f174";
+    $font-Flaticon-male: "\f175";
+    $font-Flaticon-man: "\f176";
+    $font-Flaticon-map: "\f177";
+    $font-Flaticon-map-1: "\f178";
+    $font-Flaticon-menu: "\f179";
+    $font-Flaticon-mobile-phone: "\f17a";
+    $font-Flaticon-musical-note: "\f17b";
+    $font-Flaticon-mute: "\f17c";
+    $font-Flaticon-neutral: "\f17d";
+    $font-Flaticon-newspaper: "\f17e";
+    $font-Flaticon-next: "\f17f";
+    $font-Flaticon-omega: "\f180";
+    $font-Flaticon-outbox: "\f181";
+    $font-Flaticon-page: "\f182";
+    $font-Flaticon-paper: "\f183";
+    $font-Flaticon-paragraph: "\f184";
+    $font-Flaticon-pawn: "\f185";
+    $font-Flaticon-paypal: "\f186";
+    $font-Flaticon-pen-point: "\f187";
+    $font-Flaticon-picasa: "\f188";
+    $font-Flaticon-picture: "\f189";
+    $font-Flaticon-pinterest: "\f18a";
+    $font-Flaticon-placeholder: "\f18b";
+    $font-Flaticon-play: "\f18c";
+    $font-Flaticon-play-video: "\f18d";
+    $font-Flaticon-plug: "\f18e";
+    $font-Flaticon-podcast: "\f18f";
+    $font-Flaticon-pointing-down: "\f190";
+    $font-Flaticon-power: "\f191";
+    $font-Flaticon-powerpoint: "\f192";
+    $font-Flaticon-previous: "\f193";
+    $font-Flaticon-print: "\f194";
+    $font-Flaticon-profile: "\f195";
+    $font-Flaticon-pushpin: "\f196";
+    $font-Flaticon-question: "\f197";
+    $font-Flaticon-quotes: "\f198";
+    $font-Flaticon-redo-arrow: "\f199";
+    $font-Flaticon-reduce-indentation: "\f19a";
+    $font-Flaticon-rewind: "\f19b";
+    $font-Flaticon-right-to-left-text-arrangement: "\f19c";
+    $font-Flaticon-rocket: "\f19d";
+    $font-Flaticon-rotating: "\f19e";
+    $font-Flaticon-rss: "\f19f";
+    $font-Flaticon-rss-1: "\f1a0";
+    $font-Flaticon-sad: "\f1a1";
+    $font-Flaticon-sad-1: "\f1a2";
+    $font-Flaticon-safari: "\f1a3";
+    $font-Flaticon-scissors: "\f1a4";
+    $font-Flaticon-share: "\f1a5";
+    $font-Flaticon-shopping-cart: "\f1a6";
+    $font-Flaticon-shopping-cart-1: "\f1a7";
+    $font-Flaticon-skip: "\f1a8";
+    $font-Flaticon-skype: "\f1a9";
+    $font-Flaticon-smartphone: "\f1aa";
+    $font-Flaticon-smiley: "\f1ab";
+    $font-Flaticon-smiley-1: "\f1ac";
+    $font-Flaticon-soundcloud: "\f1ad";
+    $font-Flaticon-soundcloud-1: "\f1ae";
+    $font-Flaticon-speaker: "\f1af";
+    $font-Flaticon-speech-balloons: "\f1b0";
+    $font-Flaticon-speech-bubble: "\f1b1";
+    $font-Flaticon-speech-bubbles: "\f1b2";
+    $font-Flaticon-speedometer: "\f1b3";
+    $font-Flaticon-speedometer-1: "\f1b4";
+    $font-Flaticon-spinner: "\f1b5";
+    $font-Flaticon-square: "\f1b6";
+    $font-Flaticon-square-1: "\f1b7";
+    $font-Flaticon-star: "\f1b8";
+    $font-Flaticon-star-1: "\f1b9";
+    $font-Flaticon-steam: "\f1ba";
+    $font-Flaticon-steam-1: "\f1bb";
+    $font-Flaticon-stop: "\f1bc";
+    $font-Flaticon-striped-shield: "\f1bd";
+    $font-Flaticon-stumbleupon: "\f1be";
+    $font-Flaticon-text-height: "\f1bf";
+    $font-Flaticon-three-drawers-cabinet: "\f1c0";
+    $font-Flaticon-three-horizontal-bars: "\f1c1";
+    $font-Flaticon-tongue-out: "\f1c2";
+    $font-Flaticon-trash: "\f1c3";
+    $font-Flaticon-triangles: "\f1c4";
+    $font-Flaticon-triangular: "\f1c5";
+    $font-Flaticon-truck: "\f1c6";
+    $font-Flaticon-tux: "\f1c7";
+    $font-Flaticon-tv: "\f1c8";
+    $font-Flaticon-twitter: "\f1c9";
+    $font-Flaticon-twitter-1: "\f1ca";
+    $font-Flaticon-up-arrow: "\f1cb";
+    $font-Flaticon-upload: "\f1cc";
+    $font-Flaticon-upload-1: "\f1cd";
+    $font-Flaticon-video-camera: "\f1ce";
+    $font-Flaticon-vimeo: "\f1cf";
+    $font-Flaticon-volume: "\f1d0";
+    $font-Flaticon-volume-high: "\f1d1";
+    $font-Flaticon-warning: "\f1d2";
+    $font-Flaticon-windows: "\f1d3";
+    $font-Flaticon-windows-8: "\f1d4";
+    $font-Flaticon-wine-glass: "\f1d5";
+    $font-Flaticon-wink: "\f1d6";
+    $font-Flaticon-wondering: "\f1d7";
+    $font-Flaticon-word: "\f1d8";
+    $font-Flaticon-wordpress: "\f1d9";
+    $font-Flaticon-wrench: "\f1da";
+    $font-Flaticon-writing: "\f1db";
+    $font-Flaticon-xing-icomoon: "\f1dc";
+    $font-Flaticon-xml-file: "\f1dd";
+    $font-Flaticon-youtube: "\f1de";
+    $font-Flaticon-zoom: "\f1df";
