@@ -9,6 +9,7 @@ class App {
         this.renderType = ALBUM;
         this.viewer = document.querySelector("#viewer");
         this.pagination = document.querySelector(".pagination");
+        this.viewModal = document.querySelector("#view-modal");
         
         this.getFestivals().then(() => {
             this.update();
@@ -33,6 +34,41 @@ class App {
         $(".pagination").on("click", "a", e => {
             this.page = e.currentTarget.dataset.no;
             this.update();
+        });
+
+        $(this.viewer).on("click", "[data-target='#view-modal']", e => {
+            let id = e.currentTarget.dataset.id;
+            let festival = this.festivals.find(fs => fs.sn == id);
+
+            // 데이터 변경
+            this.viewModal.querySelector(".image > img").src = festival.images.length > 0 ? `/xml/festivalImages/${this.getFestivalId(festival)}/${festival.images[0]}` : `/images/no-image.png`;
+            this.viewModal.querySelector(".nm").innerHTML = festival.nm;
+            this.viewModal.querySelector(".cn").innerHTML = festival.cn;
+            this.viewModal.querySelector(".area").innerHTML = festival.area;
+            this.viewModal.querySelector(".location").innerHTML = festival.location;
+            this.viewModal.querySelector(".dt").innerHTML = festival.dt;
+
+            // 슬라이드 초기화
+            this.viewModal.querySelector(".slide__area").dataset.sno = 1;
+            this.viewModal.querySelector(".slide__image").innerHTML = "";
+            this.viewModal.querySelector(".slide__control").innerHTML = `<button class="slide__arrow"><i class="fa fa-angle-left"></i></button>`;
+            if(festival.images.length > 0){
+                festival.images.forEach((filename, i) => {
+                    this.viewModal.querySelector(".slide__control").innerHTML += `<button class="slide__no" data-no="${i}"><i class="fa fa-circle"></i></button>`;
+                    this.viewModal.querySelector(".slide__image").innerHTML += `<img src="/xml/festivalImages/${this.getFestivalId(festival)}/${filename}" title="축제 정보 이미지" alt="축제 정보 이미지">`;
+                });
+            }
+            else {
+                this.viewModal.querySelector(".slide__image").innerHTML += `<img src="/images/no-image.png" title="축제 정보 이미지" alt="축제 정보 이미지">`;
+                this.viewModal.querySelector(".slide__control").innerHTML += `<button class="slide__no" data-no="0"><i class="fa fa-circle"></i></button>`;
+            }
+            this.viewModal.querySelector(".slide__control").innerHTML += `<button class="slide__arrow"><i class="fa fa-angle-right"></i></button>`;
+
+            // 이미지 설정
+            $(".slide__image > img:not(:first-child)").addClass("hidden__right");
+
+            // 버튼 설정
+            $(".slide__control > .slide__no").eq(0).addClass("active");
         });
     }
 
@@ -61,7 +97,6 @@ class App {
         this.pagination.innerHTML += `<a data-no="${next}"><i class="fa fa-angle-right"></i></a>`;
 
         let viewList = this.festivals.slice((this.page-1) * LEN, (this.page-1) * LEN + LEN);
-        console.log((this.page-1) * LEN, LEN);
 
         if(this.renderType === ALBUM) this.renderAlbum(viewList);
         else if(this.renderType === LIST) this.renderList(viewList);
@@ -72,7 +107,7 @@ class App {
         let wrap = $(`<div class="data__list"></div>`)[0];
         
         viewList.forEach(fs => {
-            let elem = $(`<div class="list__row">
+            let elem = $(`<div class="list__row" data-toggle="modal" data-target="#view-modal" data-no="${fs.sn}">
                             <div class="list__no">${`${fs.sn}`.length < 2 ? '0' + fs.sn : fs.sn}</div>
                             <div class="list__content">
                                 <h5 class="nm font-weight-bold">${fs.nm}</h5>
@@ -105,12 +140,12 @@ class App {
                                 </div>
                                 <div class="col-lg-7 p-3">
                                     <div class="fx-n2 text-red">대표 축제</div>
-                                    <div class="fx-4 font-weight-bold mt-2">${last.nm}</div>
+                                    <div class="fx-4 font-weight-bold">${last.nm}</div>
                                     <div class="text-muted fx-n1 mt-3">${last.dt}</div>
                                     <div class="fx-n2 keep-all mt-4">
                                         ${last.cn}
                                     </div>
-                                    <button class="btn__dynamic--bordered mt-4">
+                                    <button class="btn__dynamic--bordered mt-4" data-toggle="modal" data-target="#view-modal" data-id="${last.sn}">
                                         <span></span>
                                         <span></span>
                                         <span></span>
@@ -126,7 +161,7 @@ class App {
 
         viewList.forEach(fs => {
             let elem = $(`<div class="col-lg-4 mb-3">
-                            <div class="album__item">
+                            <div class="album__item" data-target="#view-modal" data-toggle="modal" data-id="${fs.sn}">
                                 <div class="image">${
                                         fs.images.length == 0 ? `<div class="no-image"></div>` :
                                         `<div class="no">${fs.images.length}</div>
@@ -155,38 +190,52 @@ class App {
 
     // 축제 정보 가져오기
     getFestivals(){
-        return fetch("/xml/festivalList.xml")
-            .then(res => res.text())
-            .then(async textData => {
-                let parser = new DOMParser();
-                let xmlDoc = parser.parseFromString(textData, "text/xml");
-                let xmlItems = Array.from(xmlDoc.querySelectorAll("item"));
-                let items = [];
-                await Promise.all(xmlItems.map(async xmlItem => {
-                    let item = {};
-                    item.sn = xmlItem.querySelector("sn").innerHTML;
-                    item.no = xmlItem.querySelector("no").innerHTML;
-                    item.nm = xmlItem.querySelector("nm").innerHTML;
-                    item.area = xmlItem.querySelector("area").innerHTML;
-                    item.location = xmlItem.querySelector("location").innerHTML;
-                    item.cn = xmlItem.querySelector("cn").innerHTML;
-                    item.dt = xmlItem.querySelector("dt").innerHTML;
-                    item.images = (await Promise.all(Array.from(xmlItem.querySelectorAll("image")).map(xmlImage => new Promise(res => {
-                        let filename = xmlImage.innerHTML;
-                        let xhr = new XMLHttpRequest();
-                        xhr.open("GET", `/xml/festivalImages/${this.getFestivalId(item)}/${filename}`);
-                        xhr.onload = () => {
-                            if(xhr.status == 200 || xhr.status == 201) res(filename);
-                            else res(null);
-                        }
-                        xhr.onerror = () => res(null)
-                        xhr.send();
-                    }))))
-                    .filter(image => image !== null);
-                    items[item.sn - 1] = item;
-                }));
-                this.festivals = items;
-            });
+        return new Promise(resolve => {
+            let ls__festivals = localStorage.getItem("festivals");
+            
+            if(ls__festivals){
+                this.festivals = JSON.parse(ls__festivals);
+                resolve();
+            } else {
+                fetch("/xml/festivalList.xml")
+                .then(res => res.text())
+                .then(async textData => {
+                    let parser = new DOMParser();
+                    let xmlDoc = parser.parseFromString(textData, "text/xml");
+                    let xmlItems = Array.from(xmlDoc.querySelectorAll("item"));
+                    let items = [];
+                    await Promise.all(xmlItems.map(async xmlItem => {
+                        let item = {};
+                        item.sn = xmlItem.querySelector("sn").innerHTML;
+                        item.no = xmlItem.querySelector("no").innerHTML;
+                        item.nm = xmlItem.querySelector("nm").innerHTML;
+                        item.area = xmlItem.querySelector("area").innerHTML;
+                        item.location = xmlItem.querySelector("location").innerHTML;
+                        item.cn = xmlItem.querySelector("cn").innerHTML;
+                        item.dt = xmlItem.querySelector("dt").innerHTML;
+                        item.images = (await Promise.all(Array.from(xmlItem.querySelectorAll("image")).map(xmlImage => new Promise(res => {
+                            let filename = xmlImage.innerHTML;
+                            let xhr = new XMLHttpRequest();
+                            xhr.open("GET", `/xml/festivalImages/${this.getFestivalId(item)}/${filename}`);
+                            xhr.onload = () => {
+                                if(xhr.status == 200 || xhr.status == 201) res(filename);
+                                else res(null);
+                            }
+                            xhr.onerror = () => res(null)
+                            xhr.send();
+                        }))))
+                        .filter(image => image !== null);
+                        items[item.sn - 1] = item;
+                    }));
+
+                    this.festivals = items;
+                    localStorage.setItem("festivals", JSON.stringify(items));
+    
+                    resolve();
+                });
+            }
+
+        });
     }
 }
 
