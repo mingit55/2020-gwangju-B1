@@ -366,6 +366,36 @@ hr {
     }
 }
 
+/* 페이지네이션 */
+.pagination {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination > a {
+    border: 1px solid #F22E62;
+    color: #F22E62;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
+    font-size: 0.9em;
+    margin: 0 0.2em;
+}
+.pagination > a.active,
+.pagination > a:not(:first-child):not(:last-child):hover {
+    color: #555;
+    border-color: #555;
+}
+
+.pagination > a:first-child,
+.pagination > a:last-child {
+    background-color: #F22E62;
+    color: #fff;
+}
+
 
 /*
 * 버튼 디자인

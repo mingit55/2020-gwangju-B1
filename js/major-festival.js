@@ -5,8 +5,10 @@ const LIST = 2;
 class App {
     constructor(){ this.init(); }
     async init(){
+        this.page = 1;
         this.renderType = ALBUM;
         this.viewer = document.querySelector("#viewer");
+        this.pagination = document.querySelector(".pagination");
         
         this.getFestivals().then(() => {
             this.update();
@@ -18,9 +20,18 @@ class App {
     setEvents(){
         $(".render__icon").on("click", e => {
             let type = e.currentTarget.dataset.type;
+
+            // 타입이 새롭게 변경되면 페이지네이션 초기화
+            if(type !== this.renderType) this.page = 1;
+            
+            // 타입 변경
             if(type === "album") this.renderType = ALBUM;
             else this.renderType = LIST;
+            this.update();
+        });
 
+        $(".pagination").on("click", "a", e => {
+            this.page = e.currentTarget.dataset.no;
             this.update();
         });
     }
@@ -28,8 +39,29 @@ class App {
     // 화면 업데이트
     update(){
         this.viewer.innerHTML = "";
-        let viewList = this.festivals;
 
+        const LEN = this.renderType === ALBUM ? 6 : 10;
+        const BLOCK = 5;
+        const PAGE_TOTAL = Math.ceil(this.festivals.length / LEN);
+
+        let start = Math.ceil(this.page / BLOCK) * BLOCK - BLOCK + 1;
+        start = start < 1 ? 1 : start;
+        
+        let end = start + BLOCK - 1;
+        end = end > PAGE_TOTAL ? PAGE_TOTAL : end;
+
+
+        let prev = start - 1 < 1 ? 1 : start - 1;
+        let next = end + 1 > PAGE_TOTAL ? PAGE_TOTAL : end + 1;
+
+        this.pagination.innerHTML = `<a data-no="${prev}"><i class="fa fa-angle-left"></i></a>`;
+        for(let i = start; i <= end; i++){
+            this.pagination.innerHTML += `<a class="${this.page == i ? 'active' : ''}" data-no="${i}">${i}</a>`;
+        }
+        this.pagination.innerHTML += `<a data-no="${next}"><i class="fa fa-angle-right"></i></a>`;
+
+        let viewList = this.festivals.slice((this.page-1) * LEN, (this.page-1) * LEN + LEN);
+        console.log((this.page-1) * LEN, LEN);
 
         if(this.renderType === ALBUM) this.renderAlbum(viewList);
         else if(this.renderType === LIST) this.renderList(viewList);
@@ -58,7 +90,7 @@ class App {
 
     // 생성하기 - 앨범 형식
     renderAlbum(viewList){
-        let last = viewList[viewList.length - 1];
+        let last = this.festivals[this.festivals.length - 1];
         let wrap = $(`<div class="notice__album">
                         <div class="album__top">
                             <div class="row align-items-center">
