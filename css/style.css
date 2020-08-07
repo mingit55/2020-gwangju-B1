@@ -143,22 +143,32 @@ hr {
 .list__row {
     display: flex;
     align-items: center;
-    height: 100px;
+    min-height: 100px;
     border-bottom: 1px solid #ddd;
+    padding: 1em 0;
 }
 
 .list__no {
     font-size: 1.7em;
     font-weight: 600;
-    width: 100px;
+    flex: 0 0 100px;
+    max-widtH: 100px;
+    width: 100%;
     text-align: center;
     color: #F22E62;
     border-right: 1px solid #ddd;
+    word-break: break-all;
 }
 
 .list__content {
+    width: 100%;
+    flex: 0 0 calc(100% - 100px);;
+    max-width: calc(100% - 100px);
     padding-left: 1.5em;
 }
+
+.list__row--active { background-color: #f7f7f7; }
+.list__row--active .list__no { color: #1B80BF; }
 
 /*
  * 데이터 앨범
