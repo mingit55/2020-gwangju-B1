@@ -1,3 +1,13 @@
+Date.prototype.toCustomString = function(){
+    let year = this.getFullYear();
+    let month = this.getMonth() + 1;
+    month = month < 10 ? "0" + month : month;
+    let date = this.getDate();
+    date = date < 10 ? "0" + date : date;
+
+    return `${year}년 ${month}월 ${date}일`;
+};
+
 class App {
     constructor() { this.init() }
     async init(){
@@ -105,12 +115,15 @@ class App {
                 fetch("/restAPI/currentExchangeRate.php")
                     .then(res => res.json())
                     .then(jsonData => {
-                        this.updated_at = new Date(jsonData.dt);
+                        let ymd = jsonData.dt.split(" ")[0];
+                        this.updated_at = new Date(ymd);
+                        console.log(ymd, this.updated_at);
                         this.hasList = jsonData.items.map((item, idx) => {
                             item.id = idx + 1;
                             return item;
                         });
                         this.viewList = [];
+                        document.querySelector(".updated-at").innerText = this.updated_at.toCustomString();
 
                         this.save();
                         resolve();
@@ -126,6 +139,8 @@ class App {
         this.updated_at = new Date(updated_at);
         this.hasList = hasList;
         this.viewList = viewList;
+        
+        document.querySelector(".updated-at").innerText = this.updated_at.toCustomString();
     }
 
 
